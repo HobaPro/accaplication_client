@@ -19,7 +19,7 @@ signInForm.addEventListener('submit', async function(e){
 
 async function postData(){
 
-    await fetch("http://localhost:3000/api/signin", {
+    await fetch("https://accapp.herokuapp.com/api/signin", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ async function postData(){
 
 async function getUserData(){
 
-    await fetch("http://localhost:3000/api/signin")
+    await fetch("https://accapp.herokuapp.com/api/signin")
     .then(res => res.json())
     .then(data => {
         if(!data){
