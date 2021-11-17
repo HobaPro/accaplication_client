@@ -1,0 +1,19 @@
+{
+  "name": "accapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "17.x",
+    "npm": "8.x"
+  },
+  "keywords": [],
+  "author": "HobaPro",
+  "dependencies": {
+    "cookies-js": "^1.2.3",
+    "express": "^4.17.1"
+  }
+}

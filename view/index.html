@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task_1</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+
+        <div class="app">
+            <div class="app-head">
+                <div class="user-info">
+                    
+                </div>
+            </div>
+
+            <div class="operations">
+                <div class="text-container">
+                    <h1>بيان المصروفات والإيرادات ورصيد النقدية</h1>
+                </div>
+
+                <div class="operation-section">
+                    <div class="text-container">
+                        <h1>ادخل العملية</h1>
+                    </div>
+                    <div id="error-message" class=""></div>
+                    <form>
+                        <div class="expenses-input">
+                            <input class="value-inbut" type="number" placeholder="المنصرف" />
+                        </div>
+    
+                        <div class="revenues-input">
+                            <input class="value-inbut" type="number" placeholder="الوارد" />
+                        </div>
+    
+                        <div class="statment-input">
+                            <input class="value-inbut" type="text" maxlength="100" placeholder="البيان" />
+                        </div>
+    
+                        <input id="click-btn" class="add" type="button" value="Add" />
+                    </form>
+                </div>
+
+                <table class="table">
+                    <tbody>
+                        <tr class="row header">
+                            <th class="cell">البيان</th>
+                            <th class="cell">الرصيد</th>
+                            <th class="cell">الوارد</th>
+                            <th class="cell">المنصرف</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table">
+                    <tbody>
+                        <tr class="net row">
+                            <th id="net-profit-statment" class="cell"></th>
+                            <th id="total-balance" class="cell">0</th>
+                            <th id="total-revenues" class="cell">0</th>
+                            <th id="total-expenses" class="cell">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="myModal" class="modal">
+
+                    <div class="modal-content">
+                        <div class="f-balance">
+                            <input id="f-balance-i" class="f-balance-input" type="number" placeholder="إدخل رصيد أول الفترة" />
+                            <div id="error-message2" class=""></div>
+                            <button id="click-btn-2" type="button" class="add">Add</button>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <script type="module" src="js/app.js"></script>
+    </body>
+</html>
