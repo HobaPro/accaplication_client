@@ -1,14 +1,13 @@
-import { getCookie, checkUserName } from "./cookies.js";
+import { checkUserName } from "./cookies.js";
 
 var input = document.getElementsByClassName('value-inbut');
 var table = document.getElementsByTagName('tbody')[0];
 var error_message = document.getElementById('error-message');
 var error_message2 = document.getElementById('error-message2');
 var modal = document.getElementById('myModal');
-var user_info = document.getElementsByClassName('user-info')[0];
-var logInBTN;
-var userName;
-var logout;
+var logIn = document.getElementById('login-btn');
+var userName = document.getElementById('username');
+var logout = document.getElementById('logout-btn');
 
 var f_balance = document.getElementById('f-balance-i');
 var firstBalance;
@@ -78,11 +77,6 @@ function checkValues(input){
     else return true;
 }
 
-function checkBalanceValue(input){
-    if(input.value <= 0) return false;
-    else return true;
-}
-
 function checkNumberValues1(input){
     if(input.value > 100000000) return false;
     else return true;
@@ -137,11 +131,11 @@ function insert(input){
     if(!checkValues(input)){
         errorMessage("يرجى إدخال جميع البيانات")
     }else{
-        if(!checkNumberValues1(input[1]) || !checkNumberValues1(input[0])){
+        if(!checkNumberValues1(input[0]) || !checkNumberValues1(input[1])){
             errorMessage("لقد تجاوزت الحد الأقصى");
         }else{
 
-            if(!checkNumberValues2(input[1]) || !checkNumberValues2(input[2])){
+            if(!checkNumberValues2(input[0]) || !checkNumberValues2(input[1])){
                 errorMessage("لا تدخل قيم سالبة");
                 emptyValues(input);
             }else{
@@ -304,19 +298,18 @@ function displayProfits(totalBalance){
 
 function displayUser(){
     if(!checkUserName()){
-        logInBTN = createNode('a', "Login", "", "login-btn", "/signin");
-        user_info.appendChild(logInBTN);
+        logIn.style.display = "inline-block";
         userName.style.display = "none";
         logout.style.display = "none";
     }else{
-        userName = createNode('h3', checkUserName(), "user");
-        logout = createNode('button', "Logout", "", "logout-btn");
-        user_info.appendChild(userName);
-        user_info.appendChild(logout);
+        userName.style.display = "block";
+        userName.textContent = checkUserName();
+        logout.style.display = "inline-block";
+        logIn.style.display = "none";
     }
 }
 
-logout.addEventListener('click', function(){ logOut() });
+logout.addEventListener('click', function(){ logOut()});
 
 function logOut(){
     document.cookie = `userName = `;

@@ -21,7 +21,7 @@ signUpForm.addEventListener('submit', async function(e){
 
 async function postData(){
 
-    await fetch("https://accapp.herokuapp.com/api/signup", {
+    await fetch("http://localhost:3000/api/signup", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ async function postData(){
 
 async function getUserData(){
 
-    let res = await fetch("https://accapp.herokuapp.com/api/signup");
+    let res = await fetch("http://localhost:3000/api/signup");
     res = await res.json();
     if(!res){
 
